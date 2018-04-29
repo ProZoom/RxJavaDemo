@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    signingConfigs {
+        releaseConfig {
+            keyAlias 'kmsCoreWise'
+            keyPassword 'kmsCoreWise'
+            storeFile file('C:/Users/Administrator/Desktop/KeyStore/kmsCoreWise.jks')
+            storePassword 'kmsCoreWise'
+        }
+    }
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.top.majiabao"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //manifestPlaceHolder=[APP_NAME:'主包']
+        manifestPlaceholders = [APP_NAME: '主包'] // 配置主包的应用名称
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        // 第一个马甲包
+        majiabaoOne.initWith(buildTypes.debug) // 以release的配置来初始化马甲包配置
+        majiabaoOne {
+            applicationIdSuffix ".majiabaoOne"
+            // 修改马甲包的applicationId，马甲包的application将为com.liunian.majiabaotest.majiabaoOne，即在原来的applicationId后加上配置内容
+            manifestPlaceholders = [APP_NAME: '第一个马甲包'] // 配置马甲包的应用名称
+            debuggable true
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}

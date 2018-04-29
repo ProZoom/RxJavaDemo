@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="MainInfotvSize">30sp</dimen>
+    <dimen name="MainTvMarginBottom">50dp</dimen>
+    <dimen name="MainbtnScanTextSise">20sp</dimen>
+    <dimen name="ToolBarHeight">70dp</dimen>
+    <dimen name="MainBtnScanMarginTop">50dp</dimen>
+    <dimen name="MainBtnScanPadding">10dp</dimen>
+    <dimen name="btnscancorners">5dp</dimen>
+    <dimen name="frag_iif_marginleft">30dp</dimen>
+    <dimen name="frag_iif_textsize">18sp</dimen>
+    <dimen name="frag_iif_title_textsize">23sp</dimen>
+    <dimen name="frag_iif_marginright">15dp</dimen>
+    <dimen name="item_main_tv_marginleft">8dp</dimen>
+    <dimen name="item_main_tv_marginright">8dp</dimen>
+    <dimen name="item_main_tv_size">18sp</dimen>
+    <dimen name="item_main_height">40dp</dimen>
+    <dimen name="item_mainten_height">140dp</dimen>
+    <dimen name="item_mainten_marginleft">20dp</dimen>
+    <dimen name="item_mainten_textsize">18sp</dimen>
+    <dimen name="item_mainten_marginright">15dp</dimen>
+</resources>

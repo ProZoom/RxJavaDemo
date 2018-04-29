@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">航天晨光</string>
+    <string name="MaintvInfo">产 品 信 息 管 理 系 统</string>
+    <string name="MainbtnText">请扫描产品电子标签</string>
+    <string name="MaintoolbarTitle">航天晨光股份有限公司</string>
+    <string name="MaintoolbarSubtitle">AEROSUN CORPORATION</string>
+</resources>
